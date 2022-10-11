@@ -64,7 +64,7 @@ time.sleep(1.5)
 
 list("1- Latte \n2- Yogurt Greco \n3- Burro \n4- Parmigiano Reggiano.")
 
-latticini = input("Scegli fra i latticini nella lista: \n"+ "1- Latte \n2- Yogurt Greco \n3- Burro \n4- Parmigiano Reggiano." + "\n" )
+latticini = input("Scegli fra i latticini nella lista: \n Latte, Yogurt Greco, Burro, Parmigiano Reggiano.\n ")
 
 time.sleep(1.2)
 
@@ -78,15 +78,27 @@ else:
 
 time.sleep(1.3)
 
-print("Siamo nel reparto della carne.")
+print("Siamo nel reparto della carne. \n \n")
 
 time.sleep(0.9)
 
+carne = ["Hamburger", "Maiale", "Angello", "Bistecca", "Cavallo"]
+
 list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.")
 
-meat = input("Che cosa prendi in questo reparto?\n Hamburger, Maiale, Agnello, Bistecca, Cavallo \n" )
+#i
+# meat = input("Che cosa prendi in questo reparto?\n Hamburger, Maiale, Agnello, Bistecca, Cavallo \n" )
 
-time.sleep(1)
+print("Gli alimenti nel reparto sono: ")
+
+for cibo in carne:
+    print(cibo)
+
+time.sleep(0.6)
+
+meat = input("Che cosa prendi nel reparto? ")
+
+time.sleep(0.9)
 
 if [ meat in list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.") ]:
   print("Bene, prendiamo " + meat )
