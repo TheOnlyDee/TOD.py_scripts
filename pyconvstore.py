@@ -39,18 +39,18 @@ time.sleep(0.8)
 
 time.sleep (2)
 
-if ( frutta_o_verdura_uno == "Pomodori" ):
+if ( frutta_o_verdura_uno == "Pomodori" ) or (frutta_o_verdura_uno == "Limoni") or (frutta_o_verdura_uno  == "Mele") or (frutta_o_verdura_uno == "Ravanelli") or (frutta_o_verdura_uno == "Carote"):
   print("Ok")
-elif (frutta_o_verdura_uno == "Limoni"):
-  print("Ok")
-elif (frutta_o_verdura_uno  == "Mele"):
-  print("ok")
-elif (frutta_o_verdura_uno == "Mele"):
-  print("ok")
-elif (frutta_o_verdura_uno == "Ravanelli"):
-  print("ok")
-elif (frutta_o_verdura_uno == "Carote"):
-  print("ok")
+#elif (frutta_o_verdura_uno == "Limoni"):
+#  print("Ok")
+#elif (frutta_o_verdura_uno  == "Mele"):
+#  print("ok")
+#elif (frutta_o_verdura_uno == "Mele"):
+#  print("ok")
+#elif (frutta_o_verdura_uno == "Ravanelli"):
+#  print("ok")
+#elif (frutta_o_verdura_uno == "Carote"):
+#  print("ok")
 else :
   print("non abbiamo " + frutta_o_verdura_uno + " in questo reparto, se non e frutta o verdura nella lista non protrai essere accontentato.")
 
@@ -73,3 +73,6 @@ if [latticini in list("1- Latte \n2- Yogurt Greco \n3- Burro \n4- Parmigiano Reg
 else:
   print('Non abbiamo' + latticini + ".")
   exit()
+
+#Reporto della carne
+
