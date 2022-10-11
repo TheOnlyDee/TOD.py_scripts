@@ -68,11 +68,27 @@ latticini = input("Scegli fra i latticini nella lista: \n"+ "1- Latte \n2- Yogur
 
 time.sleep(1.2)
 
-if [latticini in list("1- Latte \n2- Yogurt Greco \n3- Burro \n4- Parmigiano Reggiano.") ]:
+if [latticini in list("1- Latte \n2- Yogurt Greco \n3- Burro \n4- Parmigiano Reggiano.")  ]:
   print ("Bene, abbiamo "+ latticini + ".")
 else:
-  print('Non abbiamo' + latticini + ".")
-  exit()
+  print("Non abbiamo " + latticini + ".")
 
-#Reporto della carne
 
+#Reparto della carne
+
+time.sleep(1.3)
+
+print("Siamo nel reparto della carne.")
+
+time.sleep(0.9)
+
+list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.")
+
+meat = input("Che cosa prendi in questo reparto?\n Hamburger, Maiale, Agnello, Bistecca, Cavallo \n" )
+
+time.sleep(1)
+
+if [ meat in list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.") ]:
+  print("Bene, prendiamo " + meat )
+else: 
+  print("No c'è " + meat)
