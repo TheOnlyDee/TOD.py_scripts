@@ -68,7 +68,7 @@ latticini = input("Scegli fra i latticini nella lista: \n Latte, Yogurt Greco, B
 
 time.sleep(1.2)
 
-if [latticini in list("1- Latte \n2- Yogurt Greco \n3- Burro \n4- Parmigiano Reggiano.")  ]:
+if (latticini == "Latte" ) or (latticini == "Yogurt Greco") or (latticini == "Burro") or (latticini == "Parmigiano Reggiano"):
   print ("Bene, abbiamo "+ latticini + ".")
 else:
   print("Non abbiamo " + latticini + ".")
@@ -84,23 +84,97 @@ time.sleep(0.9)
 
 carne = ["Hamburger", "Maiale", "Angello", "Bistecca", "Cavallo"]
 
-list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.")
+#list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.")
 
-#i
 # meat = input("Che cosa prendi in questo reparto?\n Hamburger, Maiale, Agnello, Bistecca, Cavallo \n" )
 
 print("Gli alimenti nel reparto sono: ")
+
+time.sleep(0.65)
 
 for cibo in carne:
     print(cibo)
 
 time.sleep(0.6)
 
-meat = input("Che cosa prendi nel reparto? ")
+meat = input("Che cosa prendi nel reparto? \n")
 
 time.sleep(0.9)
 
-if [ meat in list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.") ]:
-  print("Bene, prendiamo " + meat )
-else: 
-  print("No c'è " + meat)
+if ( meat == "Hamburger") or ( meat   == "Maiale") or (meat == "Agnello") or (meat == "Bistecca") or (meat == "Cavallo"):
+  print("Ok, prendiamo " + meat + ".")
+elif (meat == "niente"):
+  print("Ok, Passiamo ad un altro reparto")
+else:
+  print("Non abbiamo " + meat + "." )
+  
+#if [ meat in list("1- Hamburger \n2- Maiale \n3- Agnello \n4-  Bistecca \n5- Cavallo.") ]:
+#  print("Bene, prendiamo " + meat )
+#else: 
+#  print("No c'è " + meat )
+
+
+
+#ENTRIAMO IN UN NUOVO REPARTO: LA PANETTERIA
+
+time.sleep(1.2)
+
+print("Entriamo nel reparto della panetteria")
+
+time.sleep(0.5)
+
+panetteria = [ "Pane 00", "Pane 0", "Pane Integrale", "Pane Nero", "Baguette",]
+
+print("Le Opzioni sono:")
+
+time.sleep(0.3)
+
+for pane in panetteria:
+  print(pane)
+
+time.sleep(0.6)
+
+bread = input("Cosa prendi? \n")
+
+time.sleep(0.4)
+
+if (bread == "Pane 00") or (bread == "Pane 0") or (bread == "Pane Integrale") or (bread == "Pane Nero") or (meat == "Baguette"):
+  print("Prendiamo " + bread + ".")
+elif (bread == "niente"):
+  print("Ok, passiamo al prossimo reparto")
+else:
+  print( str(bread) +" non è nella lista.")
+
+
+#ENTRIAMO NEL REPARTO DEGLI ALCOLICI, MA PRIMA CHIEDIAMO L'ETA' DEL CLIENTE
+
+time.sleep(2)
+
+eta = input("Quanti anni hai? \n")
+
+time.sleep(0.6)
+
+if (int(eta) > 17):
+  print("Siamo nel reparto degli alcolici, visto che sei maggiorenne puoi comprare qualcosa qui." )
+  
+  time.sleep(0.6)
+
+  alcolici = ["Vino Chianti", "Birra Moretti", "Spumante", "Vodka Base"]
+
+  for alcolico in alcolici:
+    print(alcolico)
+  
+  time.sleep(0.5)
+  
+  alc = input("Che cosa prendi? \n")
+
+  if ( alc == "Vino Chianti") or (alc == "Birra Moretti") or (alc == "Spumante") or (alc == "Vodka Base"):
+    print("Bene, Prendiamo " + alc + ".")
+  elif (alc == "niente"):
+    print("Va bene, " + nome + " non prendiamo alcol.")
+  else:
+    print("Non Abbiamo " + alc + ".")
+else:
+  print( "\n")
+
+
