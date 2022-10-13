@@ -177,4 +177,39 @@ if (int(eta) > 17):
 else:
   print( "\n")
 
+time.sleep(2)
+
+#NUOVO REPARTO: LA GASTRONOMIA
+
+print("Entriamo in un nuovo reparto")
+
+time.sleep(0.9)
+
+print("LA GASTRONOMIA")
+
+gastronomia = ["Melanzane Alla Parmigiana", "Lasagne Al Ragù", "Involtini Di Pollo", "Vitello Tonnnato"]
+
+time.sleep(0.86) 
+
+print("In Questo reparto Abbiamo:")
+
+time.sleep(1)
+
+for gastri in gastronomia:
+  time.sleep(0.5)
+  print(gastri)
+
+time.sleep(1)
+
+gastro = input("Che cosa prendi bel reparto? \n")
+
+if (gastro  == "Melanzane Alla Parmigiana") or ( gastro == "Lasagne Al Ragù") or (gastro == "Involtini Di Pollo" ) or (gastro == "Vitello Tonnato"):
+  print("Mamma ia  mia che buono " + gastro +".")
+elif (gastro == "niente"):
+  print("Passiamo al prossimo reparto")
+else:
+  print("Non abbiamo " +gastro + ".")
+
+print("\n \n")
+
 
