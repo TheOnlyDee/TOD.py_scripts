@@ -123,6 +123,50 @@ time.sleep(1)
 
 print(num_I)
 
+time.sleep(1)
+
 #round(num_I, 2)
 
 print(round(num_I, 2))
+
+time.sleep(1)
+
+#metodi
+
+città = "Firenze"
+
+print(città.upper())
+
+time.sleep(1)
+
+list_a = [1, 2, 3, 4]
+
+list_a.append("cinque") 
+
+print(list_a)
+
+time.sleep(1)
+
+#creare funzioni
+
+numeroI = input("Dimmi un numero \n")
+
+time.sleep(1)
+
+numeroII = input("Un altro numero \n")
+
+time.sleep(2)
+
+
+
+time.sleep(0.76)
+
+def add(numeroI: int, numeroII: int):
+    #mette insieme due numeri
+    numeroIII = numeroI + numeroII
+    return numeroIII
+
+print(add(numeroI, numeroII))
+
+time.sleep(1)
+
