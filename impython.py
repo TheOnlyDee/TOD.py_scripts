@@ -163,10 +163,26 @@ time.sleep(0.76)
 
 def add(numeroI: int, numeroII: int):
     #mette insieme due numeri
-    numeroIII = numeroI + numeroII
+    numeroIII = int(numeroI) + int(numeroII)
     return numeroIII
 
 print(add(numeroI, numeroII))
 
 time.sleep(1)
 
+def count_letter_e(word):
+    total_e = 0
+    for letter in word:
+        if letter == "e":
+            total_letter = total_e + 1
+            return total_letter
+    total_letter_e = total_letter 
+nick = input("il tuo nickname? \n")
+
+total_es_in_nick = count_letter_e(nick)
+
+time.sleep(1)
+
+print("Nel tuo nickname ci sono " + str(total_es_in_nick) + " E.")
+
+time.sleep(1)
