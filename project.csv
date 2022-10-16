@@ -1,0 +1,9 @@
+1,Definire le funzionalità del programma,2,
+2, Disegnare le immagini di base,1,1
+3,Suddividere le funzionalità in fasi,2,1
+4,Implementare le funzionalità di base,5,2 3
+5,Testare e verificare,2,4
+6,Disegnare immagini più accurate,3,5
+7,Implementare funzionalità avanzate,7,5
+8,Testare e Verificare,4,6 7
+9,Rilasciare nell'AUr,1,8
