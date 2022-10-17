@@ -5,7 +5,7 @@ import csv
 
 from collections import namedtuple
 
-#import tkinter
+import Tkinter
 
 Task = namedtuple("Task", ["title", "duration", "prerequisites"])
 
@@ -48,8 +48,15 @@ tasks = read_task("project.csv")
 otasks = order_tasks(tasks)
 print(otasks)
 
-#root = tkinter.Tk()
+root = tkinter.Tk()
 
-#root.title("Ploject Planner")
+root.title("Ploject Planner")
 
-#open_button = tkinter.Button(root)
+open_button = tkinter.Button(root, text="Apri progetto...", command=open_project)
+
+open_button.pack(side="tod")
+
+canvas = tkinter.Canvas(root, width=800, height=400, bg="white")
+
+canvas.pack(side="bottom")
+tkinter.mainloop()
