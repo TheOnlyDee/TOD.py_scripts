@@ -5,7 +5,9 @@ import csv
 
 from collections import namedtuple
 
-import Tkinter
+import tkinter
+
+from tkinter.filedialog import askopenfilename
 
 Task = namedtuple("Task", ["title", "duration", "prerequisites"])
 
@@ -44,9 +46,15 @@ def order_tasks(tasks):
     return start_days
 
 
-tasks = read_task("project.csv")
-otasks = order_tasks(tasks)
-print(otasks)
+
+def open_project():
+    filename = askopenfilename(title="Open Project", initialdir=".", filetypes=[("CSV Document", "*.csv")])
+    tasks = read_task("project.csv")
+    draw_chart(tasks, canvas)
+
+
+#ordertasks = order_tasks(tasks)
+#print(ordertasks)
 
 root = tkinter.Tk()
 
@@ -54,9 +62,10 @@ root.title("Ploject Planner")
 
 open_button = tkinter.Button(root, text="Apri progetto...", command=open_project)
 
-open_button.pack(side="tod")
+open_button.pack(side="top")
 
 canvas = tkinter.Canvas(root, width=800, height=400, bg="white")
 
 canvas.pack(side="bottom")
 tkinter.mainloop()
+
