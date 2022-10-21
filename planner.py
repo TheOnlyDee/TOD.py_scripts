@@ -45,16 +45,20 @@ def order_tasks(tasks):
                 break
     return start_days
 
-
+def draw_chart(tasks, canvas, row_height=40, title_width=300, line_height=40, day_width=20, bar_height=300, title_indent=20, font_size=-16):
+    height = canvas["height"]
+    width =canvas["width"]
+    week_width = 5 * day_width
+    canvas.create_line(0, row_height, width, line_height, fill="grey")
+    for week_number in range(5):
+        x = title_width + week_number  *  week_width
+        canvas.create_line(x, 0, x, height, fill="grey")
+        canvas.create_text(x + week_width / 2, row_height / 2, row_height / 2, text =f"settimana {week_number+1}", font =("Helvetica", font_size, "bold"))
 
 def open_project():
     filename = askopenfilename(title="Open Project", initialdir=".", filetypes=[("CSV Document", "*.csv")])
     tasks = read_task("project.csv")
     draw_chart(tasks, canvas)
-
-
-#ordertasks = order_tasks(tasks)
-#print(ordertasks)
 
 root = tkinter.Tk()
 
@@ -68,4 +72,5 @@ canvas = tkinter.Canvas(root, width=800, height=400, bg="white")
 
 canvas.pack(side="bottom")
 tkinter.mainloop()
+
 
