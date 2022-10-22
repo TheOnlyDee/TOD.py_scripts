@@ -22,8 +22,11 @@ def read_task(filename):
         prerequisites = set(map(int, row[3].split()))
         tasks[number] = Task(title, duration, prerequisites)
     return tasks
+
 #read_task("project.csv")
-#tasks = read_task("project.csv")
+
+tasks = read_task("project.csv")
+
 #print(tasks[1].title)
 #time.sleep(1)
 def order_tasks(tasks):
@@ -55,6 +58,21 @@ def draw_chart(tasks, canvas, row_height=40, title_width=300, line_height=40, da
         canvas.create_line(x, 0, x, height, fill="grey")
         canvas.create_text(x + week_width / 2, row_height / 2, row_height / 2, text =f"settimana {week_number+1}", font =("Helvetica", font_size, "bold"))
 
+start_days = order_tasks(tasks)
+
+y = row_height
+
+for task_number in start_days:
+    task = tasks[task_number]
+    canvas.create_text(title_indent, y + row_height / 2, text=task.title , anchor=tkinter.W, font=("Helvetica", font_size))
+
+    bar_x = title_width + start_days[task_number] * day_width
+    bar_y = y + (row_height - bar_height) / 2
+    bar_width = task.duration * day_height
+    canvas.create_rectangle( bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, fill="red")
+    
+    y += row_height
+
 def open_project():
     filename = askopenfilename(title="Open Project", initialdir=".", filetypes=[("CSV Document", "*.csv")])
     tasks = read_task("project.csv")
@@ -71,6 +89,5 @@ open_button.pack(side="top")
 canvas = tkinter.Canvas(root, width=800, height=400, bg="white")
 
 canvas.pack(side="bottom")
+
 tkinter.mainloop()
-
-
