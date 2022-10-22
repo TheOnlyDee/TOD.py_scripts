@@ -13,6 +13,8 @@ Task = namedtuple("Task", ["title", "duration", "prerequisites"])
 
 import time
 
+
+
 def read_task(filename):
     tasks = {}
     for row in csv.reader(open(filename)):
@@ -27,7 +29,7 @@ def read_task(filename):
 
 tasks = read_task("project.csv")
 
-#print(tasks[1].title)
+#pcanvas = tkinter.Canvas(root, width=800, height=400, bg="white")rint(tasks[1].title)
 #time.sleep(1)
 def order_tasks(tasks):
     incomplete = set(tasks)
@@ -48,11 +50,13 @@ def order_tasks(tasks):
                 break
     return start_days
 
-def draw_chart(tasks, canvas, row_height=40, title_width=300, line_height=40, day_width=20, bar_height=300, title_indent=20, font_size=-16):
+canvas = tkinter.Canvas( width=800, height=400, bg="white")
+
+def draw_chart(tasks, canvas, row_height = 40, title_width = 300, line_height = 40, day_width = 20, bar_height = 300, title_indent = 20, font_size = -16):
     height = canvas["height"]
     width =canvas["width"]
     week_width = 5 * day_width
-    canvas.create_line(0, row_height, width, line_height, fill="grey")
+    canvas.create_line(0, row_height , width, line_height, fill="grey")
     for week_number in range(5):
         x = title_width + week_number  *  week_width
         canvas.create_line(x, 0, x, height, fill="grey")
@@ -60,7 +64,9 @@ def draw_chart(tasks, canvas, row_height=40, title_width=300, line_height=40, da
 
 start_days = order_tasks(tasks)
 
-y = row_height
+#self.canvas = Canvas(self.main_window,width = self.__CANVAS_WIDTH,height = self.__CANVAS_HEIGHT)
+
+y = row_height = 40
 
 for task_number in start_days:
     task = tasks[task_number]
@@ -73,6 +79,7 @@ for task_number in start_days:
     
     y += row_height
 
+
 def open_project():
     filename = askopenfilename(title="Open Project", initialdir=".", filetypes=[("CSV Document", "*.csv")])
     tasks = read_task("project.csv")
@@ -82,7 +89,11 @@ root = tkinter.Tk()
 
 root.title("Ploject Planner")
 
-open_button = tkinter.Button(root, text="Apri progetto...", command=open_project)
+root.resizable(width=False, height=False)
+
+button_frame = tkinter.Frame(root, padx=5, pady=5 )
+
+open_button = tkinter.Button(button_frame, text="Apri progetto...", command=open_project)
 
 open_button.pack(side="top")
 
